@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: path.join(__dirname, './src/main.js'),
-    devTools: 'eval-source-map',
+    devtool: 'eval-source-map',
     output: {
         path: path.join(__dirname, './dist'),
         filename: 'js/main.js',
@@ -22,7 +22,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: './public/index.html',
             filename: './index.html',
         }),
         new CleanWebpackPlugin(),
