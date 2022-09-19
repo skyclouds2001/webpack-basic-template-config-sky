@@ -39,7 +39,9 @@
     "type": "git",
     "url": "https://github.com/skyclouds2001/vite-vue-config-sky.git"
   },
-  "scripts": {},
+  "scripts": {
+    "dev": "webpack"
+  },
   "devDependencies": {
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
