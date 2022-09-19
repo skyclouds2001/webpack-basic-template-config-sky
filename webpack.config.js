@@ -7,4 +7,9 @@ module.exports = {
         path: path.join(__dirname, './dist'),
         filename: 'main.js',
     },
-}
+    devServer: {
+        open: true,
+        host: '127.0.0.1',
+        port: 8080,
+    },
+};
