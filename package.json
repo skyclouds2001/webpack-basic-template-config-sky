@@ -1,0 +1,60 @@
+{
+  "name": "webpack-vue-config-sky",
+  "version": "0.0.0",
+  "description": "A base project of Vue-Webpack",
+  "keywords": [
+    "module",
+    "project",
+    "webpack",
+    "vue",
+    "vue-router",
+    "vuex",
+    "element-plus",
+    "typescript",
+    "eslint",
+    "prettier",
+    "stylelint",
+    "commitlint"
+  ],
+  "homepage": "https://github.com/skyclouds2001/vite-vue-config-sky#readme",
+  "bugs": {
+    "url": "https://github.com/skyclouds2001/vite-vue-config-sky/issues",
+    "email": "skyclouds2001@163.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "skyclouds2001",
+    "email": "skyclouds2001@163.com",
+    "url": "https://skyclouds2001.github.io/"
+  },
+  "contributors": [
+    "skyclouds2001"
+  ],
+  "files": [
+    "src/",
+    "public/"
+  ],
+  "main": "src/main.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skyclouds2001/vite-vue-config-sky.git"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "os": [
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "ia32",
+    "arm",
+    "mips"
+  ],
+  "private": true
+}
