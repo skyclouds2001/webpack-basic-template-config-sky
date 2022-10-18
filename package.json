@@ -1,7 +1,7 @@
 {
-  "name": "webpack-vue-config-sky",
+  "name": "webpack-config-template-sky",
   "version": "0.0.0",
-  "description": "A base project of Vue-Webpack",
+  "description": "A template project of Vue-Webpack",
   "keywords": [
     "module",
     "project",
