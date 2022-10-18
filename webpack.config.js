@@ -42,6 +42,10 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
+        test: /\.styl$/,
+        use: ['style-loader', 'css-loader', 'stylus-loader'],
+      },
+      {
         test: /\.jpg|png|gif$/,
         use: {
           loader: 'url-loader',
