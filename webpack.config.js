@@ -6,6 +6,7 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const WebpackBar = require('webpackbar');
 
 module.exports = {
   mode: 'development',
@@ -26,6 +27,7 @@ module.exports = {
     },
   },
   plugins: [
+    new WebpackBar(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
