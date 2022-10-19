@@ -43,6 +43,9 @@
     "dev": "webpack serve",
     "build": "webpack --mode production"
   },
+  "dependencies": {
+    "core-js": "^3.25.5"
+  },
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
