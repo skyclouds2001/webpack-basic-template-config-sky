@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -33,6 +35,8 @@ module.exports = {
       filename: process.env.NODE_ENV === 'development' ? 'css/[name].css' : 'css/[name].[hash].css',
       chunkFilename: process.env.NODE_ENV === 'development' ? 'css/[id].css' : 'css/[id].[hash].css',
     }),
+    process.env.NODE_ENV === 'development' ? () => {} : new BundleAnalyzerPlugin(),
+    process.env.NODE_ENV === 'development' ? () => {} : new CompressionWebpackPlugin(),
   ],
   optimization: {
     minimizer: [
