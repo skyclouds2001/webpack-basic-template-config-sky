@@ -5,11 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, './src/main.js'),
+  entry: path.join(__dirname, './src/index.js'),
   devtool: 'eval-source-map',
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'js/main.js',
+    filename: 'js/index.js',
   },
   devServer: {
     open: true,
@@ -51,7 +51,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader','postcss-loader', 'stylus-loader'],
       },
       {
-        test: /\.jpg|png|gif$/,
+        test: /\.jpe?g|png|gif$/,
         use: {
           loader: 'url-loader',
           options: {
@@ -61,15 +61,44 @@ module.exports = {
         },
       },
       {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1024 * 8,
+              outputPath: 'media',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1024 * 8,
+              outputPath: 'font',
+            },
+          },
+        ],
+      },
+      {
         test: /\.js$/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: 'defaults' }]
+              [
+                '@babel/preset-env',
+                {
+                  targets: 'defaults',
+                },
+              ],
             ],
             cacheDirectory: true,
-          }
+          },
         },
         exclude: /node_modules/,
       },
