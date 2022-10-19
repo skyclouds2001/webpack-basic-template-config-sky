@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     open: true,
     host: '127.0.0.1',
-    port: 8080,
+    port: 8000,
   },
   resolve: {
     alias: {
@@ -56,7 +56,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 1024 * 8,
-            outputPath: 'img',
+            name: 'image/[name].[hash].[ext]',
           },
         },
       },
@@ -67,7 +67,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 1024 * 8,
-              outputPath: 'media',
+              name: 'media/[name].[hash].[ext]',
             },
           },
         ],
@@ -79,7 +79,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 1024 * 8,
-              outputPath: 'font',
+              name: 'font/[name].[hash].[ext]',
             },
           },
         ],
