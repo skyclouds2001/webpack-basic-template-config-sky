@@ -28,27 +28,27 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].css',
+      filename: process.env.NODE_ENV === 'development' ? 'css/[name].css' : 'css/[name].[hash].css',
+      chunkFilename: process.env.NODE_ENV === 'development' ? 'css/[id].css' : 'css/[id].[hash].css',
     }),
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.sass|scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader','postcss-loader', 'sass-loader']
+        use: [process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader','postcss-loader', 'sass-loader']
       },
       {
         test: /\.less$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader','postcss-loader', 'less-loader'],
+        use: [process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader','postcss-loader', 'less-loader'],
       },
       {
         test: /\.styl$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader','postcss-loader', 'stylus-loader'],
+        use: [process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader','postcss-loader', 'stylus-loader'],
       },
       {
         test: /\.jpe?g|png|gif$/,
@@ -104,6 +104,7 @@ module.exports = {
             },
           }
         ],
+        include: path.resolve(__dirname,'./src/*'),
         exclude: /node_modules/,
       },
     ],

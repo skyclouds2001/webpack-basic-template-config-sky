@@ -40,8 +40,8 @@
     "url": "https://github.com/skyclouds2001/vite-vue-config-sky.git"
   },
   "scripts": {
-    "dev": "webpack serve",
-    "build": "webpack --mode production"
+    "dev": "cross-env NODE_ENV=development webpack serve",
+    "build": "cross-env NODE_ENV=production webpack --mode production"
   },
   "dependencies": {
     "core-js": "^3.25.5",
@@ -58,6 +58,7 @@
     "babel-loader": "^8.2.5",
     "cache-loader": "^4.1.0",
     "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
