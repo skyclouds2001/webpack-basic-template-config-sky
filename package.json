@@ -4,21 +4,21 @@
   "description": "A template project of Webpack",
   "keywords": [
     "module",
+    "template",
     "project",
     "webpack",
-    "vue",
-    "vue-router",
-    "vuex",
-    "element-plus",
+    "sass",
+    "less",
+    "stylus",
     "typescript",
     "eslint",
     "prettier",
     "stylelint",
     "commitlint"
   ],
-  "homepage": "https://github.com/skyclouds2001/vite-vue-config-sky#readme",
+  "homepage": "https://github.com/skyclouds2001/Webpack-Base-Template-Sky#readme",
   "bugs": {
-    "url": "https://github.com/skyclouds2001/vite-vue-config-sky/issues",
+    "url": "https://github.com/skyclouds2001/Webpack-Base-Template-Sky/issues",
     "email": "skyclouds2001@163.com"
   },
   "license": "MIT",
@@ -37,10 +37,10 @@
   "main": "src/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/skyclouds2001/vite-vue-config-sky.git"
+    "url": "https://github.com/skyclouds2001/Webpack-Base-Template-Sky.git"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve",
+    "serve": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack --mode production"
   },
   "dependencies": {

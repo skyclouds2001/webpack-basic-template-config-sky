@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: 'development',
   entry: path.join(__dirname, './src/index.js'),
-  devtool: 'eval-source-map',
+  devtool: process.env.NODE_ENV === 'development' ? 'eval-source-map' : false,
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'js/index.js',

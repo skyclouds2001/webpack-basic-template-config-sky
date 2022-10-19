@@ -1,1 +1,1 @@
-# webpack-config-template-sky
+# webpack-base-template-sky
