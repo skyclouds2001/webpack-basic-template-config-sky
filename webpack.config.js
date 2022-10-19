@@ -86,20 +86,23 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  targets: 'defaults',
-                },
+        use: [
+          'cache-loader',
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    targets: 'defaults',
+                  },
+                ],
               ],
-            ],
-            cacheDirectory: true,
-          },
-        },
+              cacheDirectory: true,
+            },
+          }
+        ],
         exclude: /node_modules/,
       },
     ],
