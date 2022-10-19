@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -32,6 +33,12 @@ module.exports = {
       chunkFilename: process.env.NODE_ENV === 'development' ? 'css/[id].css' : 'css/[id].[hash].css',
     }),
   ],
+  optimization: {
+    minimizer: [
+      new CssMinimizerWebpackPlugin(),
+      '...',
+    ]
+  },
   module: {
     rules: [
       {
