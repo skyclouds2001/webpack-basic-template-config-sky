@@ -88,6 +88,7 @@ module.exports = {
         test: /\.js$/,
         use: [
           'cache-loader',
+          'thread-loader',
           {
             loader: 'babel-loader',
             options: {
