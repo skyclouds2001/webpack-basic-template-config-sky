@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -35,7 +36,8 @@ module.exports = {
   ],
   optimization: {
     minimizer: [
-      new CssMinimizerWebpackPlugin(),
+      process.env.NODE_ENV === 'development' ? () => {} : new CssMinimizerWebpackPlugin(),
+      process.env.NODE_ENV === 'development' ? () => {} : new TerserWebpackPlugin(),
       '...',
     ]
   },
