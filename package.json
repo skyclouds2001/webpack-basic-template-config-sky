@@ -44,7 +44,8 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "core-js": "^3.25.5"
+    "core-js": "^3.25.5",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
