@@ -1,32 +1,32 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
     node: true,
     commonjs: true,
     'shared-node-browser': true,
-    worker: true
+    worker: true,
   },
+  globals: {},
   extends: [
     'eslint:recommended',
     'standard-with-typescript',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
   ],
-  overrides: [
-  ],
+  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     project: 'tsconfig.json',
-    tsconfigRootDir: __dirname
+    tsconfigRootDir: __dirname,
   },
   plugins: [
-    '@typescript-eslint'
+    '@typescript-eslint',
   ],
-  rules: {
-  }
-}
+  rules: {},
+};

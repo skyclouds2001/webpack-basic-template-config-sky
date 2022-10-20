@@ -6,6 +6,7 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const WebpackBar = require('webpackbar');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -36,6 +37,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: process.env.NODE_ENV === 'development' ? 'css/[name].css' : 'css/[name].[hash].css',
       chunkFilename: process.env.NODE_ENV === 'development' ? 'css/[id].css' : 'css/[id].[hash].css',
+    }),
+    new ESLintWebpackPlugin({
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
+      fix: true,
+      threads: true,
     }),
     process.env.NODE_ENV === 'development' ? () => {} : new BundleAnalyzerPlugin({
       include: path.resolve(__dirname,'./src/*'),
