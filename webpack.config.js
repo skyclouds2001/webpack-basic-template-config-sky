@@ -14,7 +14,8 @@ module.exports = {
   devtool: process.env.NODE_ENV === 'development' ? 'eval-source-map' : false,
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'js/index.js',
+    filename: process.env.NODE_ENV === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
+    clean: true,
   },
   devServer: {
     open: true,
@@ -88,7 +89,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 1024 * 8,
-            name: 'image/[name].[hash].[ext]',
+            name: process.env.NODE_ENV === 'development' ? 'image/[name].[ext]' : 'image/[name].[hash].[ext]',
           },
         },
       },
@@ -99,7 +100,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 1024 * 8,
-              name: 'media/[name].[hash].[ext]',
+              name: process.env.NODE_ENV === 'development' ? 'media/[name].[ext]' : 'media/[name].[hash].[ext]',
             },
           },
         ],
@@ -111,7 +112,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 1024 * 8,
-              name: 'font/[name].[hash].[ext]',
+              name: process.env.NODE_ENV === 'development' ? 'font/[name].[ext]' : 'font/[name].[hash].[ext]',
             },
           },
         ],
@@ -129,6 +130,8 @@ module.exports = {
                   '@babel/preset-env',
                   {
                     targets: 'defaults',
+                    corejs: 3,
+                    useBuiltIns: 'usage',
                   },
                 ],
               ],
