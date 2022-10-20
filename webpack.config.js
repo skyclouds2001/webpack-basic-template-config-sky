@@ -117,6 +117,8 @@ module.exports = {
       {
         test: /\.jsx?$/,
         use: [
+          'cache-loader',
+          'thread-loader',
           {
             loader: 'babel-loader',
             options: {
@@ -129,13 +131,20 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: [
+          'cache-loader',
+          'thread-loader',
           {
             loader: 'babel-loader',
             options: {
               cacheDirectory: true,
             },
           },
-          'ts-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              happyPackMode: true,
+            },
+          },
         ],
         exclude: /node_modules/,
       },
