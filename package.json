@@ -46,7 +46,8 @@
   "dependencies": {
     "core-js": "^3.25.5",
     "lodash": "^4.17.21",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
@@ -54,6 +55,7 @@
     "@types/core-js": "^2.5.5",
     "@types/lodash": "^4.14.186",
     "@types/node": "^18.11.2",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "autoprefixer": "^10.4.12",
