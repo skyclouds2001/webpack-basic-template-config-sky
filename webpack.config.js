@@ -9,7 +9,7 @@ const WebpackBar = require('webpackbar');
 
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, './src/index.js'),
+  entry: path.join(__dirname, './src/index.ts'),
   devtool: process.env.NODE_ENV === 'development' ? 'eval-source-map' : false,
   output: {
     path: path.join(__dirname, './dist'),
@@ -22,6 +22,7 @@ module.exports = {
     port: 8000,
   },
   resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.wasm'],
     alias: {
       '@': path.join(__dirname, './src/'),
     },
@@ -114,18 +115,28 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         use: [
-          'cache-loader',
-          'thread-loader',
           {
             loader: 'babel-loader',
             options: {
               cacheDirectory: true,
             },
-          }
+          },
         ],
-        include: path.resolve(__dirname,'./src/*'),
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+            },
+          },
+          'ts-loader',
+        ],
         exclude: /node_modules/,
       },
     ],
