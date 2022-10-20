@@ -37,8 +37,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: process.env.NODE_ENV === 'development' ? 'css/[name].css' : 'css/[name].[hash].css',
       chunkFilename: process.env.NODE_ENV === 'development' ? 'css/[id].css' : 'css/[id].[hash].css',
-      include: path.resolve(__dirname,'./src/*'),
-      exclude: /node_modules/,
     }),
     process.env.NODE_ENV === 'development' ? () => {} : new BundleAnalyzerPlugin({
       include: path.resolve(__dirname,'./src/*'),
