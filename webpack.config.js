@@ -123,16 +123,6 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    targets: 'defaults',
-                    corejs: 3,
-                    useBuiltIns: 'usage',
-                  },
-                ],
-              ],
               cacheDirectory: true,
             },
           }
