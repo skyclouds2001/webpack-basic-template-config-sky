@@ -13,6 +13,7 @@ module.exports = {
     'eslint:recommended',
     'standard-with-typescript',
     'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
@@ -27,6 +28,7 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
+    'prettier',
   ],
   rules: {},
 };
