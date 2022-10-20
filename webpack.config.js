@@ -7,6 +7,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -40,6 +41,11 @@ module.exports = {
     }),
     new ESLintWebpackPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
+      fix: true,
+      threads: true,
+    }),
+    new StylelintWebpackPlugin({
+      extensions: ['css', 'scss', 'sass', 'less', 'styl', 'vue', 'html'],
       fix: true,
       threads: true,
     }),
