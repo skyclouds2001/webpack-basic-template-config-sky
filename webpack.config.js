@@ -129,7 +129,6 @@ module.exports = {
       {
         test: /\.jsx?$/,
         use: [
-          'cache-loader',
           'thread-loader',
           {
             loader: 'babel-loader',
@@ -143,7 +142,6 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: [
-          'cache-loader',
           'thread-loader',
           {
             loader: 'babel-loader',
