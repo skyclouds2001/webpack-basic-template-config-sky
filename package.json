@@ -16,9 +16,9 @@
     "stylelint",
     "commitlint"
   ],
-  "homepage": "https://github.com/skyclouds2001/Webpack-Base-Template-Sky#readme",
+  "homepage": "https://github.com/skyclouds2001/webpack-basic-template-config-sky#readme",
   "bugs": {
-    "url": "https://github.com/skyclouds2001/Webpack-Base-Template-Sky/issues",
+    "url": "https://github.com/skyclouds2001/webpack-basic-template-config-sky/issues",
     "email": "skyclouds2001@163.com"
   },
   "license": "MIT",
@@ -37,7 +37,7 @@
   "main": "src/index.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/skyclouds2001/Webpack-Base-Template-Sky.git"
+    "url": "git+https://github.com/skyclouds2001/webpack-basic-template-config-sky.git"
   },
   "scripts": {
     "serve": "cross-env NODE_ENV=development webpack serve",
